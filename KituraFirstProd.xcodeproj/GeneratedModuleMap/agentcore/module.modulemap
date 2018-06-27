@@ -1,4 +1,4 @@
 module agentcore {
-    umbrella "/Users/girishbodhe/Documents/KituraFirstProd/.build/checkouts/omr-agentcore-1826539389957424207/src/agentcore/include"
+    umbrella "/Users/girishbodhe/Documents/GitHub/KituraFirstProd/.build/checkouts/omr-agentcore-1826539389957424207/src/agentcore/include"
     export *
 }

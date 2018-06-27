@@ -5,6 +5,8 @@ import Configuration
 import CloudEnvironment
 import KituraContracts
 import Health
+import SwiftKueryORM
+import SwiftKueryPostgreSQL
 
 public let projectPath = ConfigurationManager.BasePath.project.path
 public let health = Health()
@@ -12,11 +14,16 @@ public let health = Health()
 public class App {
     let router = Router()
     let cloudEnv = CloudEnv()
-
+    
+   
+    
     public init() throws {
         // Run the metrics initializer
+        
         initializeMetrics(router: router)
         router.all(middleware: BodyParser())
+        
+        
     }
 
     func postInit() throws {
