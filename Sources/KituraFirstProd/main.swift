@@ -7,6 +7,8 @@ import SwiftKuery
 import SwiftKueryORM
 import SwiftKueryPostgreSQL
 
+
+
 do {
     
     let pool = PostgreSQLConnection.createPool(host: "localhost", port: 5432, options: [.databaseName("school")], poolOptions: ConnectionPoolOptions(initialCapacity: 10, maxCapacity: 50, timeout: 10000))
@@ -31,12 +33,7 @@ do {
     grade.save { student, error in
         
     }
-    // Get an array of Grades in the database
-    Grade.findAll { students, error in
-        
-        print("Student \(String(describing: students))")
-        
-    }
+  
 //    class Grades: Table {
 //        let tableName = "Grades"
 //        let id = Column("id", Int32.self, primaryKey: true)

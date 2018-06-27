@@ -15,7 +15,11 @@ public class App {
     let router = Router()
     let cloudEnv = CloudEnv()
     
-   
+    struct Grade: Model {
+        var course: String
+        var grade: Int
+        
+    }
     
     public init() throws {
         // Run the metrics initializer
@@ -31,7 +35,15 @@ public class App {
         initializeHealthRoutes(app: self)
         // Handle HTTP GET requests to "/"
         router.get("/") { request, response, next in
-            response.send("PrideVel..!!")
+//            response.send("PrideVel..!!")
+            // Get an array of Grades in the database
+            
+            Grade.findAll { students, error in
+                
+                 response.send("Student \(String(describing: students))")
+                
+            }
+            
             next()
         }
         
