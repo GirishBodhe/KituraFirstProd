@@ -11,7 +11,7 @@ import SwiftKueryPostgreSQL
 
 do {
     
-    let pool = PostgreSQLConnection.createPool(host: "localhost", port: 5432, options: [.databaseName("school")], poolOptions: ConnectionPoolOptions(initialCapacity: 10, maxCapacity: 50, timeout: 10000))
+    let pool = PostgreSQLConnection.createPool(host: "cfrricqaguiajb", port: 5432, options: [.databaseName("school")], poolOptions: ConnectionPoolOptions(initialCapacity: 10, maxCapacity: 50, timeout: 10000))
     Database.default = Database(pool)
     
    
