@@ -12,11 +12,11 @@ let package = Package(
       .package(url: "https://github.com/IBM-Swift/CLibpq.git", .upToNextMinor(from: "0.1.0")),
       .package(url: "https://github.com/IBM-Swift/Swift-Kuery-ORM.git", from: "0.0.1"),
       .package(url: "https://github.com/IBM-Swift/Swift-Kuery-PostgreSQL.git", from: "1.0.0"),
-    
+     .package(url: "https://github.com/IBM-Swift/SwiftKueryMySQL.git", .upToNextMinor(from: "1.0.0")),
       ],
     
     targets: [
-      .target(name: "KituraFirstProd", dependencies: [ .target(name: "Application"), "Kitura" , "HeliumLogger","CLibpq", "SwiftKueryORM", "SwiftKueryPostgreSQL"]),
+      .target(name: "KituraFirstProd", dependencies: [ .target(name: "Application"), "Kitura" , "HeliumLogger","CLibpq", "SwiftKueryORM", "SwiftKueryPostgreSQL","SwiftKueryMySQL"]),
       .target(name: "Application", dependencies: [ "Kitura", "CloudEnvironment","SwiftMetrics","Health",      ]),
       .testTarget(name: "ApplicationTests" , dependencies: [.target(name: "Application"), "Kitura","HeliumLogger" ]),
       

@@ -11,28 +11,30 @@ import SwiftKueryPostgreSQL
 
 do {
     
-    let pool = PostgreSQLConnection.createPool(host: "cfrricqaguiajb", port: 5432, options: [.databaseName("school")], poolOptions: ConnectionPoolOptions(initialCapacity: 10, maxCapacity: 50, timeout: 10000))
-    Database.default = Database(pool)
+
     
-   
-    struct Grade: Model {
-        var course: String
-        var grade: Int
-        
-    }
-    
-    do {
-        try Grade.createTableSync()
-    } catch {
-        // Error
-    }
-    
-    let grade = Grade(course: "Computer Science", grade: 76)
-    
-    // Save to the database
-    grade.save { student, error in
-        
-    }
+//    let pool = PostgreSQLConnection.createPool(host: "cfrricqaguiajb", port: 5432, options: [.databaseName("school")], poolOptions: ConnectionPoolOptions(initialCapacity: 10, maxCapacity: 50, timeout: 10000))
+//    Database.default = Database(pool)
+//
+//
+//    struct Grade: Model {
+//        var course: String
+//        var grade: Int
+//
+//    }
+//
+//    do {
+//        try Grade.createTableSync()
+//    } catch {
+//        // Error
+//    }
+//
+//    let grade = Grade(course: "Computer Science", grade: 76)
+//
+//    // Save to the database
+//    grade.save { student, error in
+//
+//    }
   
 //    class Grades: Table {
 //        let tableName = "Grades"
